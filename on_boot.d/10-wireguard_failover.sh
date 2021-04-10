@@ -10,15 +10,15 @@ while sleep 240
 do
 
 if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 201 ]; then
-	[ ! -z "$failover_up" ] || failover_up=0
-	if [ $failover_up = 1 ]; then
+	[ ! -z "$failover" ] || failover=0
+	if [ $failover = 1 ]; then
 		wg-quick down wg0
 		wg-quick up wg0
-		unset failover_up
+		unset failover
 	fi
 else
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 202 ] || [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 203 ]; then
-		failover_up=1
+		failover=1
 	fi
 fi
 done
