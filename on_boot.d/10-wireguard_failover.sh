@@ -1,4 +1,8 @@
 #!/bin/sh
+# @k-a-s-c-h on GitHub
+# @0815 on ubnt forums
+# file is located at https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh
+
 while sleep 240
 do
 	
