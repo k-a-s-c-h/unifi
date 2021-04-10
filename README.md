@@ -9,6 +9,6 @@ UDMPro Wireguard
 
 Wireguard Failover Script (on_boot.d)
 - <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.sh</a> 
-- WAN1 ppp0
+- WAN1 ppp0 (eth8)
 - WAN2 eth9
 - UniFi LTE grep1
