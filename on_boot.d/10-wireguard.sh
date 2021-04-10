@@ -26,6 +26,7 @@ if [ `lsmod | egrep ^wireguard | wc -l` = 1 ]; then
 	insmod /mnt/data/wireguard/iptable_raw-$ver.ko
 fi
 
-sleep 60
-
-wg-quick up wg0
+if [ -f /usr/bin/wg-quick ]; then
+	sleep 60
+	wg-quick up wg0
+fi
