@@ -6,7 +6,7 @@
 # curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
 # chmod +x /mnt/data/on_boot.d/10-wireguard.sh
 
-if [ -d /mnt/data/wireguard/ ]; then
+if [ -d /mnt/data/wireguard ]; then
 	[ ! -f /usr/bin/wg-quick ] && ln -s /mnt/data/wireguard/usr/bin/wg-quick /usr/bin/wg-quick
 	[ ! -f /usr/bin/wg ] && ln -s /mnt/data/wireguard/usr/bin/wg /usr/bin/wg
 	[ ! -f /usr/bin/bash ] && ln -s /mnt/data/wireguard/usr/bin/bash /usr/bin/bash
