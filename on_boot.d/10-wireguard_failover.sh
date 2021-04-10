@@ -9,16 +9,19 @@
 while sleep 240
 do
 
-if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 201 ]; then
-	[ ! -z "$failover" ] || failover=0
-	if [ $failover = 1 ]; then
-		wg-quick down wg0
-		wg-quick up wg0
-		unset failover
-	fi
-else
-	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 202 ] || [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 203 ]; then
-		failover=1
+if [ `lsmod | awk '{print $1}' | grep wireguard | wc -l` = 1 ]; then
+	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 201 ]; then
+		[ ! -z "$failover" ] || failover=0
+		if [ $failover = 1 ]; then
+			wg-quick down wg0
+			wg-quick up wg0
+			unset failover
+		fi
+	else
+		if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 202 ] || [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 203 ]; then
+			failover=1
+		fi
 	fi
 fi
+
 done
