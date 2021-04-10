@@ -1,10 +1,10 @@
 
 
-<b>UDMPro Boot Script (on_boot.d)</b>
+<b>UDM/UDMPro Boot Script (on_boot.d)</b>
 - Thanks John D. for providing UDM / UDMPro Boot Script
 - https://github.com/boostchicken/udm-utilities/tree/master/on-boot-script
 
-<b>UDMPro Wireguard</b>
+<b>UDM/UDMPro Wireguard</b>
 - Thanks tusc for providing Wireguard for UDMPro in kernel mode
 - https://github.com/tusc/wireguard-kmod
 
