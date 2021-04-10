@@ -12,61 +12,53 @@ ulte=backup
 
 if [ $wan1  = primary ] && [ $ulte = backup ]; then
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $17}' | awk '{print substr($0,0,length($0)-1)}'` = up ]; then
-		if [ -f /tmp/failover_up ]; then
+		if [ $failover_up = 1 ]; then
 			wg-quick down wg0
 			sleep 5
 			wg-quick up wg0
-			rm /tmp/failover_up
+			unset failover_up
 		fi
 	else
-		if [ ! -f /tmp/failover_up ]; then
-			touch /tmp/failover_up
-		fi
+		failover_up = 1
 	fi
 fi
 
 if [ $wan1 = primary ] && [ $wan2 = backup ]; then
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $17}' | awk '{print substr($0,0,length($0)-1)}'` = up ]; then
-		if [ -f /tmp/failover_up ]; then
+		if [ $failover_up = 1 ]; then
 			wg-quick down wg0
 			sleep 5
 			wg-quick up wg0
-			rm /tmp/failover_up
+			unset failover_up
 		fi
 	else
-		if [ ! -f /tmp/failover_up ]; then
-			touch /tmp/failover_up
-		fi
+		failover_up = 1
 	fi
 fi
 
 if [ $wan2 = primary ] && [ $ulte = backup ]; then
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $13}' | awk '{print substr($0,0,length($0)-1)}'` = up ]; then
-		if [ -f /tmp/failover_up ]; then
+		if [ $failover_up = 1 ]; then
 			wg-quick down wg0
 			sleep 5
 			wg-quick up wg0
-			rm /tmp/failover_up
+			unset failover_up
 		fi
 	else
-		if [ ! -f /tmp/failover_up ]; then
-			touch /tmp/failover_up
-		fi
+		failover_up = 1
 	fi
 fi
 
 if [ $wan2 = primary ] && [ $wan1 = backup ]; then
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $13}' | awk '{print substr($0,0,length($0)-1)}'` = up ]; then
-		if [ -f /tmp/failover_up ]; then
+		if [ $failover_up = 1 ]; then
 			wg-quick down wg0
 			sleep 5
 			wg-quick up wg0
-			rm /tmp/failover_up
+			unset failover_up
 		fi
 	else
-		if [ ! -f /tmp/failover_up ]; then
-			touch /tmp/failover_up
-		fi
+		failover_up = 1
 	fi
 fi
 done
