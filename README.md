@@ -11,3 +11,6 @@
 - <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.sh</a><br>
 During failover, Wireguard automatically switches from the primary WAN to the failover WAN when switching from the failover WAN to the primary WAN, Wireguard remains on the failover WAN.
 10-wireguard_failover.sh checks every 240 seconds whether the primary WAN is available again and reconnects Wireguard to the primary WAN.
+
+# curl -LJo curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
+# chmod +x /mnt/data/on_boot.d/10-wireguard_failover.sh
