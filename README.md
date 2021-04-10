@@ -1,8 +1,8 @@
-<b>Author: k-a-s-c-h (@0815 on ubnt forums)</b>
+
 
 <b>UDMPro Boot Script (on_boot.d)</b>
+- Thanks John D. for providing UDM / UDMPro Boot Script
 - https://github.com/boostchicken/udm-utilities/tree/master/on-boot-script
-- chmod +x /mnt/data/on_boot.d/*
 
 <b>UDMPro Wireguard</b>
 - Thanks tusc for providing Wireguard for UDMPro in kernel mode
@@ -22,3 +22,4 @@ wireguard_failover checks every 240 seconds whether the primary WAN is available
 # curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
 # chmod +x /mnt/data/on_boot.d/10-wireguard_failover.sh
 ```
+<b>Author: k-a-s-c-h (@0815 on ubnt forums)</b>
