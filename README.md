@@ -5,6 +5,7 @@
 - chmod +x /mnt/data/on_boot.d/*
 
 <b>UDMPro Wireguard</b>
+- Thanks tusc for providing Wireguard for UDMPro in kernel mode
 - https://github.com/tusc/wireguard-kmod
 
 <b>UDMPro Wireguard Start Script (on_boot.d)</b>
