@@ -5,6 +5,10 @@
 # table 201 WAN Primary
 # table 202 WAN Failover
 # table 203 U-LTE Failover
+#
+# curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
+# chmod +x /mnt/data/on_boot.d/10-wireguard_failover.sh
+
 
 while sleep 240
 do
