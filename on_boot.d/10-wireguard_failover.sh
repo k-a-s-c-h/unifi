@@ -17,6 +17,7 @@ using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tai
 		[ ! -z "$failover" ] || failover=0
 		if [ $failover = 1 ]; then
 			wg-quick down wg0
+			sleep 2
 			wg-quick up wg0
 			unset failover
 		fi
