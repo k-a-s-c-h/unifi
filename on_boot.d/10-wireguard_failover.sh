@@ -10,7 +10,7 @@ wan1=primary
 wan2=none
 ulte=backup
 
-if [ $wan1  = primary ] && [ $ulte = backup ]; then
+if [ $wan1 = primary ] && [ $ulte = backup ]; then
 	if [ `cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $17}' | awk '{print substr($0,0,length($0)-1)}'` = up ]; then
 		if [ $failover_up = 1 ]; then
 			wg-quick down wg0
