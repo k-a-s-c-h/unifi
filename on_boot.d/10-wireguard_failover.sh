@@ -18,7 +18,7 @@ if [`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | 
 	fi
 else
 	if [`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 202 ] || [`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'` = 203 ]; then
-		failover_up = 1
+		failover_up=1
 	fi
 fi
 done
