@@ -7,5 +7,8 @@ UDMPro Boot Script (on_boot.d)
 UDMPro Wireguard
 - https://github.com/tusc/wireguard-kmod
 
-my scripts
-- <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.s</a>
+Wireguard Failover Script (on_boot.d)
+- <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.sh</a> 
+- WAN1 ppp0
+- WAN2 eth9
+- UniFi LTE grep1
