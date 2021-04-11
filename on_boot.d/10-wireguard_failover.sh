@@ -27,8 +27,8 @@ if [ $using_table = 201 ]; then
 	fi
 else
 	if [ $using_table = 202 ] || [ $using_table = 203 ]; then
-		failover=1
 		sleeptime=30
+		failover=1
 	fi
 fi
 
