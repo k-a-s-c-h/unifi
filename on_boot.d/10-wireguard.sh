@@ -10,7 +10,9 @@ if [ -d /mnt/data/wireguard ]; then
 	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
 		cd /mnt/data/wireguard
 		./setup_wireguard.sh
-		[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wiregaurd/wg0.conf ]; then
+			wg-quick up wg0
+		fi
 	fi
 else
 	lastrelease=`curl -sL https://api.github.com/repos/tusc/wireguard-kmod/releases/latest | jq -r '.assets[].browser_download_url'`
@@ -20,6 +22,8 @@ else
 	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
 		cd /mnt/data/wireguard
 		./setup_wireguard.sh
-		[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wiregaurd/wg0.conf ]; then
+			wg-quick up wg0
+		fi
 	fi
 fi
