@@ -10,7 +10,7 @@
 
 <b>UDM/UDMPro Wireguard Start Script (on_boot.d)</b><br>
 - <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard.sh">10-wireguard.sh</a><br>
-10-wireguard.sh starts automatically when booting the UDM / UDMPro and starts setup_wireguard.sh from tusc and waits 240 seconds before starting the Wireguard VPN tunnel.
+10-wireguard.sh starts automatically when booting the UDM / UDMPro and starts setup_wireguard.sh from tusc and starting the Wireguard VPN tunnel.
 ```
 curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
 chmod +x /mnt/data/on_boot.d/10-wireguard.sh
