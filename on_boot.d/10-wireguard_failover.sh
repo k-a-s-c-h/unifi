@@ -14,22 +14,26 @@
 while sleep $sleeptime
 do
 
-using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'`
+if [ -f /etc/wireguard/wg0.conf ]; then
 
-if [ $using_table = 201 ]; then
-	sleeptime=30
-	[ ! -z "$failover" ] || failover=0
-	if [ $failover = 1 ]; then
-		wg-quick down wg0
-		sleep 2
-		wg-quick up wg0
-		unset failover
-	fi
-else
-	if [ $using_table = 202 ] || [ $using_table = 203 ]; then
+	using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'`
+
+	if [ $using_table = 201 ]; then
 		sleeptime=30
-		failover=1
+		[ ! -z "$failover" ] || failover=0
+		if [ $failover = 1 ]; then
+			wg-quick down wg0
+			sleep 2
+			wg-quick up wg0
+			unset failover
+		fi
+	else
+		if [ $using_table = 202 ] || [ $using_table = 203 ]; then
+			sleeptime=30
+			failover=1
+		fi
 	fi
+	
 fi
 
 done
