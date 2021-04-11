@@ -9,9 +9,7 @@
 - https://github.com/tusc/wireguard-kmod
 
 <b>UDM/UDMPro Wireguard Start Script (on_boot.d)</b><br>
-- <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard.sh">10-wireguard.sh</a><br>
-10-wireguard.sh starts automatically when booting the UDM / UDMPro and starts setup_wireguard.sh script from tusc and starting the Wireguard VPN tunnel.<br>
-10-wireguard.sh checks if Wiregard is already present on the UDM/UDM Pro, if not it will be downloaded from tusc repo and extracted.
+<a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard.sh">10-wireguard.sh</a> starts automatically when booting the UDM / UDMPro @tusc setup_wireguard.sh script and starts the Wireguard VPN tunnel. If Wireguard is not yet present on the UDM/UDMPro, 10-wireguard.sh automatically loads the latest release from @tusc repo and extracts it.
 ```
 curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
 chmod +x /mnt/data/on_boot.d/10-wireguard.sh
