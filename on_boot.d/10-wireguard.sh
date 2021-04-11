@@ -6,8 +6,20 @@
 # curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
 # chmod +x /mnt/data/on_boot.d/10-wireguard.sh
 
-if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
-	cd /mnt/data/wireguard
-	./setup_wireguard.sh
-	[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+if [ -d /mnt/data/wireguard ]; then
+	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
+		cd /mnt/data/wireguard
+		./setup_wireguard.sh
+		[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+	fi
+else
+	lastrelease=`curl -sL https://api.github.com/repos/tusc/wireguard-kmod/releases/latest | jq -r '.assets[].browser_download_url'`
+	curl -LJo /mnt/data/wireguard-kmod.tar.Z $lastrelease
+	tar -C /mnt/data -xvzf /mnt/data/wireguard-kmod.tar.Z
+	rm /mnt/data/wireguard-kmod.tar.Z
+	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
+		cd /mnt/data/wireguard
+		./setup_wireguard.sh
+		[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+	fi
 fi
