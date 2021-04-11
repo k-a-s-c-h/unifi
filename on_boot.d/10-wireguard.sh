@@ -9,5 +9,7 @@
 if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
 	cd /mnt/data/wireguard
 	./setup_wireguard.sh
-	[ -f /usr/bin/wg-quick ] && wg-quick up wg0
+	if [ -f /usr/bin/wg-quick ]; then
+		wg-quick up wg0
+	fi
 fi
