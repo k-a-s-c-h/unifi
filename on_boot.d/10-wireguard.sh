@@ -10,7 +10,7 @@ if [ -d /mnt/data/wireguard ]; then
 	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
 		cd /mnt/data/wireguard
 		./setup_wireguard.sh
-		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wiregaurd/wg0.conf ]; then
+		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wireguard/wg0.conf ]; then
 			wg-quick up wg0
 		fi
 	fi
@@ -22,7 +22,7 @@ else
 	if [ -f /mnt/data/wireguard/setup_wireguard.sh ]; then
 		cd /mnt/data/wireguard
 		./setup_wireguard.sh
-		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wiregaurd/wg0.conf ]; then
+		if [ -f /usr/bin/wg-quick ] && [ -f /etc/wireguard/wg0.conf ]; then
 			wg-quick up wg0
 		fi
 	fi
