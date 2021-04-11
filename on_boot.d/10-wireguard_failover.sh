@@ -10,7 +10,7 @@
 # chmod +x /mnt/data/on_boot.d/10-wireguard_failover.sh
 
 
-while sleep 240
+while sleep 480
 do
 
 using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'`
