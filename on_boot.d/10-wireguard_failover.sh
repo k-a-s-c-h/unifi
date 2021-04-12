@@ -23,7 +23,6 @@ if [ -f /etc/wireguard/wg0.conf ]; then
 		[ ! -z "$failover" ] || failover=0
 		if [ $failover = 1 ]; then
 			wg-quick down wg0
-			sleep 2
 			wg-quick up wg0
 			unset failover
 		fi
