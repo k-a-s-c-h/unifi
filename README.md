@@ -23,7 +23,7 @@ In the script you can adjust the sleeptime using the variable sleeptime. Further
 
 ```
 logfile= 0 disable | 1 enable
-sleeptime = time in ms
+sleeptime = time in seconds
 ```
 
 ```
