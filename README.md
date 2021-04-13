@@ -15,7 +15,7 @@ curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/
 chmod +x /mnt/data/on_boot.d/10-wireguard.sh
 ```
 
-<b>UDM/UDMPro Wireguard Failover Script (requires on_boot.d)</b>
+<b>UDM/UDMPro Wireguard Failover Script (requires on_boot.d)</b><br>
 <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.sh</a><br>
 On failover, Wireguard automatically switches from the primary interface to the failover interface, when switching from the failover interface to the primary interface, Wireguard remains on the failover interface.<br>
 By default, the Wireguard failover script checks every 30 seconds to see if the primary interface is available again and reconnects Wireguard to the primary interface.<br>
