@@ -22,8 +22,8 @@ By default, the Wireguard failover script checks every 30 seconds to see if the 
 In the script you can adjust the sleeptime using the variable sleeptime. Furthermore it is possible to write a logfile to the file wireguard_failover in /mnt/data/log/ using the variable logfile.
 
 ```
-logfile= 0 disable | 1 enable
-sleeptime = time in seconds | default 30
+logfile= 0 disable | 1 enable ( default 0 )
+sleeptime = time in seconds ( default 30 )
 ```
 
 ```
