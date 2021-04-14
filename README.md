@@ -25,7 +25,7 @@ sleeptime = time in seconds ( default 30 )
 * Download and set rights
 ```
 curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
-url -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
+curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
 chmod +x /mnt/data/on_boot.d/10-wireguard*.sh
 ```
 * Adjust the settings if you want (or use default)
