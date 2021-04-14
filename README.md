@@ -1,3 +1,10 @@
+## Table of Contents
+* [UDM/UDMPro Wireguard Start Script](#udmudmpro-wireguard-start-script-requires-on_bootd)
+* [UDM/UDMPro Wireguard Failover Script](#udmudmpro-wireguard-failover-script-requires-on_bootd)
+* [Install](#installation)
+
+
+
 ## UDM/UDMPro Wireguard Start Script (requires [on_boot.d](https://github.com/boostchicken/udm-utilities))
 <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard.sh">10-wireguard.sh</a> starts automatically when booting the UDM / UDMPro [@tusc](https://github.com/tusc) setup_wireguard.sh script and starts the Wireguard VPN tunnel. If Wireguard is not yet present on the UDM/UDMPro, 10-wireguard.sh automatically loads the latest release from [@tusc repo](https://github.com/tusc/wireguard-kmod) and extracts it.
 
