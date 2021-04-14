@@ -1,7 +1,7 @@
-## UDM/UDMPro Wireguard Start Script (requires on_boot.d)
+## UDM/UDMPro Wireguard Start Script (requires [on_boot.d](https://github.com/boostchicken/udm-utilities))
 <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard.sh">10-wireguard.sh</a> starts automatically when booting the UDM / UDMPro [@tusc](https://github.com/tusc) setup_wireguard.sh script and starts the Wireguard VPN tunnel. If Wireguard is not yet present on the UDM/UDMPro, 10-wireguard.sh automatically loads the latest release from [@tusc repo](https://github.com/tusc/wireguard-kmod) and extracts it.
 
-## UDM/UDMPro Wireguard Failover Script (requires on_boot.d)
+## UDM/UDMPro Wireguard Failover Script (requires [on_boot.d](https://github.com/boostchicken/udm-utilities))
 <a href="https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh">10-wireguard_failover.sh</a><br>
 On failover, Wireguard automatically switches from the primary interface to the failover interface, when switching from the failover interface to the primary interface, Wireguard remains on the failover interface.<br>
 By default, the Wireguard failover script checks every 30 seconds to see if the primary interface is available again and reconnects Wireguard to the primary interface.<br>
