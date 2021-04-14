@@ -10,6 +10,7 @@ In the script you can adjust the sleeptime using the variable sleeptime. Further
 ```
 logfile= 0 disable | 1 enable ( default 0 )
 sleeptime = time in seconds ( default 30 )
+```
 
 ## Installation
 * Install [WireGuard kernel module](https://github.com/tusc/wireguard-kmod)
