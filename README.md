@@ -1,6 +1,7 @@
 ## Table of Contents
 * [UDM/UDMPro Wireguard Start Script](#udmudmpro-wireguard-start-script-requires-on_bootd)
 * [UDM/UDMPro Wireguard Failover Script](#udmudmpro-wireguard-failover-script-requires-on_bootd)
+* [UDM/UDMPro ULA Add Script]
 * [Install](#installation)
 
 
@@ -17,6 +18,8 @@ In the script you can adjust the sleeptime using the variable sleeptime. Further
 logfile = 0 disable | 1 enable ( default 0 )
 sleeptime = time in seconds ( default 30 )
 ```
+
+## [UDM/UDMPro Add ULA Script](https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/11-add-ula.sh) (requires [on_boot.d](https://github.com/boostchicken/udm-utilities/tree/master/on-boot-script))
 
 ## Installation
 * Install [WireGuard kernel module](https://github.com/tusc/wireguard-kmod)
