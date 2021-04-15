@@ -2,6 +2,8 @@
 # @k-a-s-c-h on GitHub
 # @0815 on ubnt forums
 # file is located at https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/11-ad-ula.sh
+# curl -LJo /mnt/data/on_boot.d/11-ad-ula.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/11-ad-ula.sh
+# chmod +x /mnt/data/on_boot.d/11-ad-ula.sh
 
 ###############
 logfile=0
