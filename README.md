@@ -30,6 +30,7 @@ Execute via ssh "ifconfig br0 | grep HWaddr | awk '{print $5}'" and generate a U
 ```
 curl -LJo /mnt/data/on_boot.d/10-wireguard.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard.sh
 curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
+curl -LJo /mnt/data/on_boot.d/11-add-ula.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/11-add-ula.sh
 chmod +x /mnt/data/on_boot.d/10-wireguard*.sh
 ```
 * Adjust the settings if you want (or use default)
