@@ -1,7 +1,7 @@
 ## Table of Contents
 * [UDM/UDMPro Wireguard Start Script](#udmudmpro-wireguard-start-script-requires-on_bootd)
 * [UDM/UDMPro Wireguard Failover Script](#udmudmpro-wireguard-failover-script-requires-on_bootd)
-* [UDM/UDMPro ULA Add Script](#udmudmpro-add-ula-script-requires-on_bootd)
+* [UDM/UDMPro Add ULA Script](#udmudmpro-add-ula-script-requires-on_bootd)
 * [Install](#installation)
 
 
