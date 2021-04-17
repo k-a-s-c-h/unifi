@@ -6,7 +6,6 @@
 # chmod +x /mnt/data/on_boot.d/11-add-ula.sh
 # execute via ssh "ifconfig br0 | grep HWaddr | awk '{print $5}'" and generate a ULA PREFIX with your br0 MAC address on https://cd34.com/rfc4193/ and enter it under ULA_PREFIX_br0
 ###############
-logfile=0
 sleeptime=30
 ULA_PREFIX_br0=
 ###############
