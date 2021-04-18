@@ -10,15 +10,23 @@ sleeptime=30
 ULA_PREFIX_br0=
 ###############
 
-[ ! -z "$sleep_time" ] || sleep_time=0
+if [ ! "${#ULA_PREFIX_br0}" -lt "1" ]; then
 
-while sleep $sleep_time
-do
+	[ ! -z "$sleep_time" ] || sleep_time=0
 
-if [ `ifconfig br0 | grep "$ULA_PREFIX_br0::1/64" | wc -l` = 0 ]; then
-	ip address add $ULA_PREFIX_br0::1/64 dev br0
+	while sleep $sleep_time
+	do
+
+		if [ `ifconfig br0 | grep "$ULA_PREFIX_br0::1/64" | wc -l` = 0 ]; then
+			ip address add $ULA_PREFIX_br0::1/64 dev br0
+		fi
+
+		sleep_time=$sleeptime
+
+	done
+
+else
+
+	exit 0
+
 fi
-
-sleep_time=$sleeptime
-
-done
