@@ -2,6 +2,9 @@
 # @k-a-s-c-h on GitHub
 # @0815 on ubnt forums
 # file is located at https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/12-inwx_dyndns.sh
+#
+# curl -LJo /mnt/data/on_boot.d/12-inwx_dyndns.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/12-inwx_dyndns.sh
+# chmod +x /mnt/data/on_boot.d/12-inwx_dyndns.sh
 
 ###############
 dyndns_username='user'
