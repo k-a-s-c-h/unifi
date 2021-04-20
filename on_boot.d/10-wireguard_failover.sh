@@ -19,9 +19,7 @@ while sleep $sleep_time
 do
 
 if [ -f /etc/wireguard/wg0.conf ]; then
-
 	using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'`
-
 	if [ $using_table = 201 ]; then
 		sleep_time=$sleeptime
 		[ ! -z "$failover" ] || failover=0
@@ -41,7 +39,6 @@ if [ -f /etc/wireguard/wg0.conf ]; then
 			failover=1
 		fi
 	fi
-	
 fi
 
 done
