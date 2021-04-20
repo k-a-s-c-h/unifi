@@ -7,16 +7,16 @@
 # chmod +x /mnt/data/on_boot.d/12-inwx_dyndns.sh
 
 ###############
-dyndns_username='user'
+dyndns_username='username'
 dyndns_password='password'
 dyndns_hostname='your-dyndns.domain.tld'
-update_sleeptime=30
-update_ipv4ipv6=true
-update_ipv4_only=false
-update_ipv6_only=false
-namesver=ns.inwx.de
-get_ipv4=ifconfig.co
-get_ipv6=ifconfig.co
+update_sleeptime='30'
+update_ipv4ipv6='true'
+update_ipv4_only='false'
+update_ipv6_only='false'
+namesver='ns.inwx.de'
+get_ipv4='ifconfig.co'
+get_ipv6='ifconfig.co'
 ###############
 
 while sleep $update_sleeptime
