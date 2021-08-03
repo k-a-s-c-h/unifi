@@ -2,8 +2,8 @@
 # @k-a-s-c-h on GitHub
 # @0815 on ubnt forums
 # file is located at https://github.com/k-a-s-c-h/unifi/blob/main/on_boot.d/10-wireguard_failover.sh
-# table 201 WAN Primary
-# table 202 WAN Failover
+# table 201 WAN Ethernet
+# table 202 WAN SFP+
 # table 203 U-LTE Failover
 #
 # curl -LJo /mnt/data/on_boot.d/10-wireguard_failover.sh https://raw.githubusercontent.com/k-a-s-c-h/unifi/main/on_boot.d/10-wireguard_failover.sh
