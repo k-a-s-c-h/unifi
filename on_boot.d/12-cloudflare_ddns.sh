@@ -22,7 +22,7 @@ if [[ $ipv4_update = true ]]; then
 		record=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records?type=A&name=$record_name" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json")
 		[[ $record == *"\"count\":0"* ]] && { echo -s "Cloudflare DDNS Updater: ${record_name} does not exist on Cloudflare"; exit 1; }
 		if [[ $wanip == $(echo "$record" | jq -r '{"result"}[] | .[0] | .content') ]]; then
-			echo "Cloudflare DDNS Updater: IP $wanip for $record_name has not changed."
+			echo "Cloudflare DDNS Updater: $wanip for $record_name has not changed."
 		else
 			update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$(echo "$record" | jq -r '{"result"}[] | .[0] | .id')" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json" --data "{\"id\":\"$zone_id\",\"type\":\"A\",\"name\":\"$record_name\",\"content\":\"$wanip\"}")
 			case "$update" in
@@ -45,7 +45,7 @@ if [[ $ipv6_update = true ]]; then
 		record=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records?type=AAAA&name=$record_name" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json")
 		[[ $record == *"\"count\":0"* ]] && { echo -s "Cloudflare DDNS Updater: ${record_name} does not exist on Cloudflare"; exit 1; }
 		if [[ $wanip == $(echo "$record" | jq -r '{"result"}[] | .[0] | .content') ]]; then
-			echo "Cloudflare DDNS Updater: IP $wanip for $record_name has not changed."
+			echo "Cloudflare DDNS Updater: $wanip for $record_name has not changed."
 		else
 			update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$(echo "$record" | jq -r '{"result"}[] | .[0] | .id')" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json" --data "{\"id\":\"$zone_id\",\"type\":\"AAAA\",\"name\":\"$record_name\",\"content\":\"$wanip\"}")
 			case "$update" in
