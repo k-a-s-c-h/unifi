@@ -35,7 +35,7 @@ if [[ $ipv4_update = true ]]; then
 			esac
 		fi
 	else
-		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP is not valid." ; exit 1; }
+		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv4 is not valid." ; exit 1; }
 	fi
 fi
 
@@ -58,7 +58,7 @@ if [[ $ipv6_update = true ]]; then
 			esac
 		fi
 	else
-		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP is not valid." ; exit 1; }
+		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv6 is not valid." ; exit 1; }
 	fi
 fi
 
