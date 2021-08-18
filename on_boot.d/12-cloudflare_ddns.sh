@@ -27,7 +27,7 @@ if [[ $ipv4_update = true ]]; then
 			update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$(echo "$record" | jq -r '{"result"}[] | .[0] | .id')" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json" --data "{\"id\":\"$zone_id\",\"type\":\"A\",\"name\":\"$record_name\",\"content\":\"$wanip\"}")
 			case "$update" in
 				*"\"success\":false"*)
-					{ echo "Cloudflare DDNS Updater: $wanip $record_name DDNS failed for update." ; exit 1; }
+					echo "Cloudflare DDNS Updater: $wanip $record_name DDNS failed for update."
 				;;
 				*)
 					echo "Cloudflare DDNS Updater: $wanip $record_name DDNS updated."
@@ -35,7 +35,7 @@ if [[ $ipv4_update = true ]]; then
 			esac
 		fi
 	else
-		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv4 is not valid." ; exit 1; }
+		echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv4 is not valid."
 	fi
 fi
 
@@ -50,7 +50,7 @@ if [[ $ipv6_update = true ]]; then
 			update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$(echo "$record" | jq -r '{"result"}[] | .[0] | .id')" -H "Authorization: Bearer $api_token" -H "Content-Type: application/json" --data "{\"id\":\"$zone_id\",\"type\":\"AAAA\",\"name\":\"$record_name\",\"content\":\"$wanip\"}")
 			case "$update" in
 				*"\"success\":false"*)
-					{ echo "Cloudflare DDNS Updater: $wanip $record_name DDNS failed for update." ; exit 1; }
+					echo "Cloudflare DDNS Updater: $wanip $record_name DDNS failed for update."
 				;;
 				*)
 					echo "Cloudflare DDNS Updater: $wanip $record_name DDNS updated."
@@ -58,7 +58,7 @@ if [[ $ipv6_update = true ]]; then
 			esac
 		fi
 	else
-		{ echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv6 is not valid." ; exit 1; }
+		echo "Cloudflare DDNS Updater: No public IP found or WANIP IPv6 is not valid."
 	fi
 fi
 
