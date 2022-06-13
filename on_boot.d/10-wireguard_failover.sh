@@ -22,7 +22,7 @@ do
 	for config in "${wireguard_interface[@]}"
 		do
 			if [ -f /etc/wireguard/$wireguard_interface.conf ]; then
-				using_table=`cat /var/log/messages | grep wanFailover | grep "using table" | tail -n1 | awk '{print $11}'`
+				using_table=`cat /var/log/messages | grep wan-failover-groups | grep "table" | tail -n1 | grep -oE '201|202|203'`
 				if [ $using_table = 201 ]; then
 					sleep_time=$sleeptime
 					[ ! -z "$failover" ] || failover=0
